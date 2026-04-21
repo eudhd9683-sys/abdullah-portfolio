@@ -13,13 +13,44 @@
         /* --- 您提供的 CSS 代码开始 --- */
         :root {
             --main-blue: #e7e7e7;
+            --bg-color: #000;
+            --text-color: #fff;
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --card-border: rgba(255, 255, 255, 0.2);
+            --nav-bg: rgba(255, 255, 255, 0.1);
+            --input-bg: rgba(255, 255, 255, 0.1);
+            --input-border: rgba(255, 255, 255, 0.2);
+            --btn-bg: #fff;
+            --btn-text: #000;
+            --btn-hover: #ddd;
+            --link-color: rgba(255, 255, 255, 0.8);
+            --link-hover: #fff;
+            --video-filter: brightness(0.5);
         }
+
+        /* Light mode variables */
+        [data-theme="light"] {
+            --bg-color: #f5f5f5;
+            --text-color: #333;
+            --card-bg: rgba(255, 255, 255, 0.7);
+            --card-border: rgba(0, 0, 0, 0.1);
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            --input-bg: rgba(255, 255, 255, 0.8);
+            --input-border: rgba(0, 0, 0, 0.1);
+            --btn-bg: #333;
+            --btn-text: #fff;
+            --btn-hover: #555;
+            --link-color: rgba(0, 0, 0, 0.7);
+            --link-hover: #000;
+            --video-filter: brightness(0.8);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; color: white; overflow-x: hidden; background: #000; }
+        body { font-family: 'Poppins', sans-serif; color: var(--text-color); overflow-x: hidden; background: var(--bg-color); transition: background-color 0.3s, color 0.3s; }
 
         /* Video Background */
         .video-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; overflow: hidden; }
-        #myVideo { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.5); position: absolute; top: 0; left: 0; }
+        #myVideo { width: 100%; height: 100%; object-fit: cover; filter: var(--video-filter); position: absolute; top: 0; left: 0; }
 
         /* Splash Screen */
         #welcome-screen {
@@ -31,20 +62,21 @@
 
         /* Glassmorphism Card Style */
         .glass-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--card-bg);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--card-border);
             border-radius: 25px;
             padding: 80px;
             text-align: center;
             box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            transition: background-color 0.3s, border-color 0.3s;
         }
 
         /* Layout */
         .main-content { padding: 80px 20px; display: flex; flex-direction: column; align-items: center; gap: 50px; }
 
-        .profile-img { width: 140px; height: 140px; border-radius: 50%; border: 3px solid #fff; margin-bottom: 20px; object-fit: cover; }
+        .profile-img { width: 140px; height: 140px; border-radius: 50%; border: 3px solid var(--text-color); margin-bottom: 20px; object-fit: cover; }
 
         .section-title { font-size: 2rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
 
@@ -54,16 +86,16 @@
         }
 
         .item img { width: 100%; border-radius: 15px; transition: 0.3s; }
-        .item:hover { transform: translateY(-10px); background: rgba(255,255,255,0.2); }
+        .item:hover { transform: translateY(-10px); background: var(--card-bg); }
 
         /* Buttons */
         .glass-btn {
-            padding: 15px 50px; background: #fff; color: #000; border: none;
+            padding: 15px 50px; background: var(--btn-bg); color: var(--btn-text); border: none;
             border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; font-size: 1rem;
         }
-        .glass-btn:hover { background: #ddd; transform: scale(1.05); }
+        .glass-btn:hover { background: var(--btn-hover); transform: scale(1.05); }
 
-        .social-links a { color: #fff; text-decoration: none; margin: 0 10px; opacity: 0.8; }
+        .social-links a { color: var(--text-color); text-decoration: none; margin: 0 10px; opacity: 0.8; }
         .social-links a:hover { opacity: 1; text-decoration: underline; }
 
         /* Item Image Wrapper */
@@ -101,10 +133,10 @@
             width: 90%;
             max-width: 1200px;
             height: 70px;
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--nav-bg);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--card-border);
             border-radius: 50px;
             display: flex;
             justify-content: space-between;
@@ -114,23 +146,38 @@
             transition: 0.4s;
         }
 
-        .logo { color: white; font-weight: bold; font-size: 1.5rem; letter-spacing: 2px; }
+        .logo { color: var(--text-color); font-weight: bold; font-size: 1.5rem; letter-spacing: 2px; }
 
         .nav-links { display: flex; list-style: none; gap: 40px; }
 
         .nav-links a {
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--link-color);
             text-decoration: none;
             font-size: 1rem;
             font-weight: 500;
             transition: 0.3s;
         }
 
-        .nav-links a:hover { color: white; text-shadow: 0 0 10px white; }
+        .nav-links a:hover { color: var(--link-hover); text-shadow: 0 0 10px var(--link-hover); }
 
         /* Hamburger Menu */
         .hamburger { display: none; cursor: pointer; z-index: 10001; }
-        .hamburger span { display: block; width: 25px; height: 3px; margin: 5px; background-color: white; transition: all 0.3s; }
+        .hamburger span { display: block; width: 25px; height: 3px; margin: 5px; background-color: var(--text-color); transition: all 0.3s; }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 5px;
+            margin-left: 15px;
+            transition: transform 0.3s;
+        }
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
 
         /* Smart Dock */
         .smart-dock { 
@@ -148,11 +195,11 @@
             display: flex; 
             align-items: center; 
             padding: 15px 18px; 
-            background: rgba(255, 255, 255, 0.1); 
+            background: var(--card-bg); 
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.2); 
+            border: 1px solid var(--card-border); 
             border-radius: 50px;
-            color: white; 
+            color: var(--text-color); 
             text-decoration: none; 
             width: 65px; 
             overflow: hidden; 
@@ -164,7 +211,7 @@
 
         .glass-tab:hover { 
             width: 250px; 
-            background: rgba(255, 255, 255, 0.2); 
+            background: var(--card-bg); 
             box-shadow: 0 15px 30px rgba(0,0,0,0.3);
             transform: translateY(-5px); 
         }
@@ -180,10 +227,10 @@
         .content { display: flex; flex-direction: row; gap: 30px; width: 100%; max-width: 1100px; justify-content: center; flex-wrap: wrap; }
 
         .card {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--card-bg);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--card-border);
             border-radius: 20px;
             padding: 40px;
             text-align: center;
@@ -193,19 +240,19 @@
             transition: 0.3s;
         }
 
-        .card:hover { background: rgba(255, 255, 255, 0.15); }
+        .card:hover { background: var(--card-bg); }
         .card .img { margin-bottom: 20px; font-size: 3rem; }
-        .card h3 { font-size: 1.3rem; margin-bottom: 15px; color: white; }
-        .card p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); }
+        .card h3 { font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); }
+        .card p { font-size: 0.9rem; color: var(--link-color); }
 
         /* Contact Section */
         .contact-content { display: flex; flex-direction: row; gap: 30px; width: 100%; max-width: 1100px; justify-content: center; }
 
         .contact-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--card-bg);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--card-border);
             border-radius: 20px;
             padding: 40px;
             text-align: left;
@@ -214,24 +261,24 @@
             transition: 0.3s;
         }
 
-        .contact-card:hover { background: rgba(255, 255, 255, 0.15); }
-        .contact-card h3 { font-size: 1.5rem; margin-bottom: 20px; color: white; }
-        .contact-card p { margin-bottom: 15px; color: rgba(255, 255, 255, 0.8); }
-        .contact-card a { color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: 0.3s; }
-        .contact-card a:hover { color: white; text-decoration: underline; }
+        .contact-card:hover { background: var(--card-bg); }
+        .contact-card h3 { font-size: 1.5rem; margin-bottom: 20px; color: var(--text-color); }
+        .contact-card p { margin-bottom: 15px; color: var(--link-color); }
+        .contact-card a { color: var(--link-color); text-decoration: none; transition: 0.3s; }
+        .contact-card a:hover { color: var(--link-hover); text-decoration: underline; }
 
         .contact-form { display: flex; flex-direction: column; gap: 15px; }
         .contact-form input, .contact-form textarea {
-            padding: 15px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.1); color: white; font-size: 1rem;
+            padding: 15px; border-radius: 10px; border: 1px solid var(--input-border);
+            background: var(--input-bg); color: var(--text-color); font-size: 1rem;
             font-family: 'Poppins', sans-serif; transition: 0.3s; width: 100%;
         }
-        .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: rgba(255, 255, 255, 0.5); background: rgba(255, 255, 255, 0.15); }
+        .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--card-border); background: var(--input-bg); }
         .contact-form button {
-            padding: 15px 30px; background: white; color: black; border: none; border-radius: 50px;
+            padding: 15px 30px; background: var(--btn-bg); color: var(--btn-text); border: none; border-radius: 50px;
             font-weight: bold; cursor: pointer; transition: 0.3s; font-size: 1rem; font-family: 'Poppins', sans-serif;
         }
-        .contact-form button:hover { background: #ddd; transform: scale(1.05); }
+        .contact-form button:hover { background: var(--btn-hover); transform: scale(1.05); }
 
         html { scroll-behavior: smooth; }
         main { padding-top: 120px; }
@@ -243,7 +290,7 @@
             .hamburger { display: block; }
             .nav-links {
                 position: fixed; right: -100%; top: 70px; flex-direction: column;
-                background: rgba(0, 0, 0, 0.9); width: 100%; text-align: center;
+                background: var(--nav-bg); width: 100%; text-align: center;
                 transition: 0.3s; padding: 20px 0; gap: 20px;
             }
             .nav-links.active { right: 0; }
@@ -294,17 +341,22 @@
 
     <!-- Navigation -->
     <nav class="glass-nav">
-        <div class="logo">BRAND</div>
+        <div class="logo">ABDULLAh</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div style="display: flex; align-items: center;">
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
@@ -326,7 +378,7 @@
             <div class="glass-card">
                 <img src="IMG_٢٠٢٤١٢١٩_١٥٢٠٢٩~2.jpg" alt="Profile" class="profile-img">
                 <h1 class="section-title">Hello, I'm a Developer</h1>
-                <p style="margin: 20px 0; color: #ddd;">Creating responsive and modern web experiences.</p>
+                <p style="margin: 20px 0; color: var(--link-color);">Creating responsive and modern web experiences.</p>
                 <button class="glass-btn">View Work</button>
                 <div class="social-links" style="margin-top: 20px;">
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -432,6 +484,35 @@
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
+        });
+
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Check for saved user preference
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'light') {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
         });
     </script>
 </body>
