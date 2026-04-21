@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdullah | Creative Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Removed invalid Cloudflare links; replace with actual CDN if needed -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="glass-nav">
+        <div class="logo">ABDULLAH</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Background Video -->
+    <div class="video-container">
+        <video autoplay muted loop playsinline id="myVideo">
+            <source src="vecteezy_abstract-technology-big-data-background-concept-hi-tech_34891568.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" src="kuzu420-programming-a-computer-loop-323395.mp3" loop></audio>
+
+    <!-- Main Website Content -->
+    <main class="main-content">
+        <!-- Hero Section (Home) -->
+        <section id="home" class="glass-card hero">
+            <img src="IMG_٢٠٢٤١٢١٩_١٥٢٠٢٩~2.jpg" alt="Abdullah" class="profile-img">
+            <h1>I'm Abdullah</h1>
+            <p>Creative Web Developer & UI Designer</p>
+            <div class="smart-dock">
+                <a href="https://wa.me" class="glass-tab wa">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>+20 1234567890</span>
+                </a>
+                <a href="#" class="glass-tab ig">
+                    <i class="fab fa-instagram"></i>
+                    <span>@eudhd9683</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Projects Gallery -->
+        <section id="projects">
+            <h2 class="section-title">My Projects & Clicks</h2>
+            <div class="projects-grid">
+                <div class="glass-card item">
+                    <img src="Image20251104184102.png" alt="Project 1">
+                    <h3>Minecraft Web UI</h3>
+                </div>
+                <div class="glass-card item">
+                    <img src="Image20260217184822.png" alt="Project 2">
+                    <h3>Glassmorphism Dashboard</h3>
+                </div>
+                <div class="glass-card item">
+                    <img src="applications-of-computer-programming.webp" alt="Personal Photo">
+                    <h3>Creative Moments</h3>
+                </div>
+            </div>
+           
+            <button class="glass-btn" onclick="alert('Contact form coming soon!')">Get In Touch</button>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="cards">
+            <div class="title">Skills</div>
+            <div class="content">
+                <div class="card">
+                    <div class="img">
+                        <img src="code-solid.png" alt="" width="50">
+                    </div>
+                    <div class="info">
+                        <h3>Web Development</h3>
+                        <p>create and develop websites using html and css</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img">
+                        <img src="robot-solid.png" alt="" width="50">
+                    </div>
+                    <div class="info">
+                        <h3>Chatbot Development</h3>
+                        <p>Design and develop chatbots with python and data encryption</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img">
+                        <img src="gamepad-solid.png" alt="" width="50">
+                    </div>
+                    <div class="info">
+                        <h3>Game Development</h3>
+                        <p>designing and Development games with a complet working game engin</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="cards about">
+            <div class="title">About Me</div>
+            <div class="content">
+                <div class="card">
+                    <div class="img">
+                        <i class="fas fa-user-circle" style="font-size: 40px;"></i>
+                    </div>
+                    <div class="info">
+                        <h3>Who I Am</h3>
+                        <p>I am Abdullah, a creative web developer and UI designer building modern glassmorphism interfaces.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img">
+                        <i class="fas fa-graduation-cap" style="font-size: 40px;"></i>
+                    </div>
+                    <div class="info">
+                        <h3>My Background</h3>
+                        <p>I study programming and create projects in HTML, CSS, JavaScript, Python and more.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img">
+                        <i class="fas fa-rocket" style="font-size: 40px;"></i>
+                    </div>
+                    <div class="info">
+                        <h3>My Goals</h3>
+                        <p>I want to build better user experiences, grow my portfolio and launch professional web apps.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="cards contact">
+            <div class="title">Contact</div>
+            <div class="content contact-content">
+                <div class="card contact-card">
+                    <div class="info">
+                        <h3>Get in touch</h3>
+                        <p>Send me a message for work, collaboration or questions.</p>
+                        <p>Email: <a href="mailto:your@email.com">eudhd9683@email.com</a></p>
+                        <p>Phone: +20 1234567890</p>
+                    </div>
+                </div>
+                <div class="card contact-card">
+                    <form class="contact-form" action="#" method="post">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                        <button class="glass-btn" type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer title">Copyrights @ <span>lemon studios</span></p>
+        <div class="credits">
+            <i class="fas fa-chevron-left"></i> powered <i class="fas fa-chevron-right"></i> with <i class="fas fa-heart"></i>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
